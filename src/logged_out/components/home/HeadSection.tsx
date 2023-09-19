@@ -115,7 +115,7 @@ function HeadSection(props: HeadSectionProps) {
 										>
 											<Box mb={4}>
 												<Typography variant={isWidthUpLg ? 'h3' : 'h4'}>
-													Free Template for building a SaaS app using Material-UI
+													Aqui entrarão imagens legais
 												</Typography>
 											</Box>
 											<div>
@@ -124,8 +124,7 @@ function HeadSection(props: HeadSectionProps) {
 														variant={isWidthUpLg ? 'h6' : 'body1'}
 														color="textSecondary"
 													>
-														Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-														nonumy eirmod tempor invidunt
+														Aqui entrará um Hero legal
 													</Typography>
 												</Box>
 											</div>
