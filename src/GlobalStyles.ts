@@ -90,7 +90,7 @@ const styles = (theme) => ({
 			},
 		},
 		'::-webkit-scrollbar': {
-			width: '8px',
+			width: '6px',
 		},
 
 		/* Estilizar o polegar (thumb) da scrollbar */
