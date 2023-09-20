@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import PropsRoute from '../../shared/components/PropsRoute';
 import Home from './home/Home';
 import Blog from './blog/Blog';
@@ -9,29 +9,31 @@ import useLocationBlocker from '../../shared/functions/useLocationBlocker';
 function Routing(props) {
 	const { blogPosts, selectBlog, selectHome } = props;
 	useLocationBlocker();
+
 	return (
-		<Switch>
+		<Routes>
 			{blogPosts.map((post) => (
-				<PropsRoute
+				<Route
 					path={post.url}
-					component={BlogPost}
-					title={post.title}
-					key={post.title}
-					src={post.src}
-					date={post.date}
-					content={post.content}
-					otherArticles={blogPosts.filter((blogPost) => blogPost.id !== post.id)}
+					element={
+						<PropsRoute
+							component={BlogPost}
+							title={post.title}
+							key={post.title}
+							src={post.src}
+							date={post.date}
+							content={post.content}
+							otherArticles={blogPosts.filter((blogPost) => blogPost.id !== post.id)}
+						/>
+					}
 				/>
 			))}
-			<PropsRoute
-				exact
+			<Route
 				path="/blog"
-				component={Blog}
-				selectBlog={selectBlog}
-				blogPosts={blogPosts}
+				element={<Blog selectBlog={selectBlog} blogPosts={blogPosts} />}
 			/>
-			<PropsRoute path="/" component={Home} selectHome={selectHome} />
-		</Switch>
+			<Route path="/" element={<Home selectHome={selectHome} />} />
+		</Routes>
 	);
 }
 

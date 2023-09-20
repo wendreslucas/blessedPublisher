@@ -1,28 +1,26 @@
-import { useHistory } from "react-router-dom";
-import { useEffect } from "react";
-
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const useLocationBlocker = () => {
-  /** 
-   * Prevents react-router from pushing the same
-   * page to the history twice which leads to
-   * multiple clicks on the back icon of the browser
-   * being necessary to go back into the history.
-  */
-  const history = useHistory();
-  useEffect(
-    () =>
-      history.block(
-        (location, action) =>
-          action !== "PUSH" ||
-          getLocationId(location) !== getLocationId(history.location)
-      ),
-    [] // eslint-disable-line react-hooks/exhaustive-deps
-  );
-}
+	const navigate = useNavigate();
+	const location = useLocation();
 
-const getLocationId = ({ pathname, search, hash }) => {
-  return pathname + (search ? "?" + search : "") + (hash ? "#" + hash : "");
-}
+	const getLocationId = ({ pathname, search, hash }) => {
+		return pathname + (search ? '?' + search : '') + (hash ? '#' + hash : '');
+	};
+
+	useEffect(() => {
+		const unblock = navigate((to) => {
+			if (to.pathname !== location.pathname) {
+				return getLocationId(to) === getLocationId(location);
+			}
+			return false;
+		});
+
+		return unblock;
+	}, [navigate, location]);
+
+	return null; // Return null as this is a hook
+};
 
 export default useLocationBlocker;
