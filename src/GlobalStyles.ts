@@ -90,13 +90,13 @@ const styles = (theme) => ({
 			},
 		},
 		'::-webkit-scrollbar': {
-			width: '12px',
+			width: '8px',
 		},
 
 		/* Estilizar o polegar (thumb) da scrollbar */
 		'::-webkit-scrollbar-thumb': {
-			backgroundColor: '#888' /* Cor de fundo do polegar */,
-			borderRadius: '6px' /* Cantos arredondados do polegar */,
+			backgroundColor: '#896281',
+			borderRadius: '6px',
 		},
 
 		/* Estilizar a área de fundo da scrollbar */
