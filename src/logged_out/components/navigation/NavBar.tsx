@@ -84,6 +84,8 @@ function NavBar(props) {
 			<AppBar position="fixed" className={classes.appBar}>
 				<Toolbar className={classes.toolbar}>
 					<div>
+						{/* <Logo width={60} height={60} /> */}
+
 						<Typography
 							variant="h4"
 							className={classes.brandText}
@@ -92,14 +94,6 @@ function NavBar(props) {
 						>
 							Blessed Editora
 						</Typography>
-						{/* <Typography
-							variant="h4"
-							className={classes.brandText}
-							display="inline"
-							color="primary"
-						>
-							Sed
-						</Typography> */}
 					</div>
 					<div>
 						<Hidden mdUp>

@@ -13,10 +13,9 @@ const customColors = {
 };
 
 // Other color constants
-// const primary = '#b3294e';
-const primary = '#CB5C64';
-// const secondary = '#4829B2';
-const secondary = '#F4DADB';
+// const primary = '#CB5C64';
+const primary = '#896281';
+const secondary = '#eed4e2';
 // const background = "#f5f5f5";
 const background = 'black';
 const warningLight = 'rgba(253, 200, 69, .3)';
