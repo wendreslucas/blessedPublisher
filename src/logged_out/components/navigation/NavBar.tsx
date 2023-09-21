@@ -49,7 +49,6 @@ function NavBar(props) {
 		handleMobileDrawerClose,
 		mobileDrawerOpen,
 		selectedTab,
-		openLoginDialog,
 	} = props;
 
 	const menuItems = [
@@ -72,11 +71,6 @@ function NavBar(props) {
 			name: 'Faça parte',
 			onClick: openRegisterDialog,
 			icon: <HowToRegIcon className="text-white" />,
-		},
-		{
-			name: 'Login',
-			onClick: openLoginDialog,
-			icon: <LockOpenIcon className="text-white" />,
 		},
 	];
 	return (

@@ -2,10 +2,6 @@ import withStyles from '@mui/styles/withStyles';
 
 const styles = (theme) => ({
 	'@global': {
-		/**
-		 * Disable the focus outline, which is default on some browsers like
-		 * chrome when focusing elements
-		 */
 		'*:focus': {
 			outline: 0,
 		},

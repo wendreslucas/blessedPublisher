@@ -45,10 +45,10 @@ function Main(props: MainProps) {
 		setSelectedTab('Blog');
 	}, []);
 
-	const openLoginDialog = useCallback(() => {
-		setDialogOpen('login');
-		setIsMobileDrawerOpen(false);
-	}, []);
+	// const openLoginDialog = useCallback(() => {
+	// 	setDialogOpen('login');
+	// 	setIsMobileDrawerOpen(false);
+	// }, []);
 
 	const closeDialog = useCallback(() => {
 		setDialogOpen(null);
@@ -59,9 +59,9 @@ function Main(props: MainProps) {
 		setIsMobileDrawerOpen(false);
 	}, []);
 
-	const openTermsDialog = useCallback(() => {
-		setDialogOpen('termsOfService');
-	}, []);
+	// const openTermsDialog = useCallback(() => {
+	// 	setDialogOpen('termsOfService');
+	// }, []);
 
 	const handleMobileDrawerOpen = useCallback(() => {
 		setIsMobileDrawerOpen(true);
@@ -71,9 +71,9 @@ function Main(props: MainProps) {
 		setIsMobileDrawerOpen(false);
 	}, []);
 
-	const openChangePasswordDialog = useCallback(() => {
-		setDialogOpen('changePassword');
-	}, []);
+	// const openChangePasswordDialog = useCallback(() => {
+	// 	setDialogOpen('changePassword');
+	// }, []);
 
 	const fetchBlogPosts = useCallback(() => {
 		const updatedBlogPosts = dummyBlogPosts.map((blogPost) => {
@@ -108,12 +108,9 @@ function Main(props: MainProps) {
 				<CookieConsent handleCookieRulesDialogOpen={handleCookieRulesDialogOpen} />
 			)}
 			<DialogSelector
-				openLoginDialog={openLoginDialog}
 				dialogOpen={dialogOpen}
 				onClose={closeDialog}
-				openTermsDialog={openTermsDialog}
 				openRegisterDialog={openRegisterDialog}
-				openChangePasswordDialog={openChangePasswordDialog}
 			/>
 			<CookieRulesDialog
 				open={isCookieRulesDialogOpen}
@@ -122,7 +119,6 @@ function Main(props: MainProps) {
 			<NavBar
 				selectedTab={selectedTab}
 				selectTab={setSelectedTab}
-				openLoginDialog={openLoginDialog}
 				openRegisterDialog={openRegisterDialog}
 				mobileDrawerOpen={isMobileDrawerOpen}
 				handleMobileDrawerOpen={handleMobileDrawerOpen}
